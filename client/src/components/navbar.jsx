@@ -6,8 +6,8 @@ import { MdMenu,MdClose  } from "react-icons/md";
 
 const Navbar = () =>{
     const menu = [
-        {name:"HOME",link:""},
-        {name:"JOB OFFERS",link:""}
+        {name:"HOME",link:"/"},
+        {name:"JOB OFFERS",link:"/Job-Offers"}
     ]
 
     const [open, setOpen] = useState(false);
@@ -15,13 +15,13 @@ const Navbar = () =>{
         setOpen(!open);
     }
     return (
-        <div className="bg-violet-800 w-screen h-fit ">
+        <div className="bg-violet-900 w-screen h-fit ">
             <div className="flex justify-between p-3 lg:px-4">
                 <span className=" flex justify-between text-white">
                     {React.createElement(FaConnectdevelop, { size: "50" })} 
                     <h1 className="font-light text-3xl pl-2 pt-1.5">CONTACTINI</h1>
                 </span>
-                <span className="text-white pr-1">
+                <span className="text-white pr-4">
                     <button onClick={handleOpen} className="lg:hidden  pt-2.5 opacity-80">
                         { open ? React.createElement(MdClose , { size: "30" }):React.createElement(MdMenu, { size: "30" })}
                     </button>
@@ -45,7 +45,7 @@ const Navbar = () =>{
                         {menu?.map((m,i)=>(
                             <li key={i} className="py-2 text-lg">
                                 <a href={m.link}>
-                                {m.name}
+                                    {m.name}
                                 </a>
                             </li>
                         ))}
